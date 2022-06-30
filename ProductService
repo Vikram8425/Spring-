@@ -1,0 +1,23 @@
+package com.example.demo.services;
+
+import com.example.demo.Model.Product;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+@Component
+public class ProductService {
+	
+	List<Product> list=new ArrayList<>();
+
+	public Product createProduct(Product product) {
+		System.out.println(product.getProductName());
+   		list.add(product);
+   		return product;
+	}
+	public List<Product> getAllProducts(){
+		
+		return list;
+	}
+}
